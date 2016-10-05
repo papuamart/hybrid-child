@@ -1,0 +1,220 @@
+
+/**
+* Widgets in general
+************************************************/
+.widget {
+	overflow: hidden;
+	margin: 0 0 20px 0;
+	padding: 9px 9px 0 9px;
+	background: #fff;
+	border: 1px solid #ddd;
+	}
+.widget-title {
+	height: 19px;
+	margin: 0 0 15px 0;
+	padding: 3px 10px;
+	font: 15px/18px georgia, times, 'times new roman', serif;
+	font-weight: bold;
+	color: #f7f7f7;
+	background: #093653 url(images/widget-title.png) repeat-x 0 0;
+	}
+.widget-title a {
+	color: #f7f7f7;
+	}
+ 
+/* Widget search */
+.widget-search .search-text {
+	width: 300px;
+	}
+
+/* Widget categories */
+.widget-categories img {
+	position: relative;
+	max-height: 16px;
+	top: 1px;
+	margin: 0;
+	padding: 0;
+	}
+
+/**
+* Content-area widgets (mostly utility widgets)
+************************************************/
+.content .widget {
+	margin: 0;
+	padding: 0;
+	border: none;
+	}
+.content .widget-title {
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	font: normal normal bold 14px/20px georgia, times, 'times new roman', serif;
+	color: #333;
+	background: transparent;
+	border-bottom: 1px solid #ddd;
+	}
+.content .widget-title a {
+	color: #093653;
+	}
+.page-template-widgets .content .widget, .page-template-page-widgets .content .widget {
+	margin: 0 0 20px 0;
+	}
+	
+/**
+* Primary, Secondary, and Tertiary
+************************************************/
+#primary {
+	overflow: hidden;
+	float: right;
+	width: 320px;
+	}
+#secondary {
+	overflow: hidden;
+	float: right;
+	width: 153px;
+	margin: 0 0 0 14px;
+	}
+#tertiary {
+	overflow: hidden;
+	clear: right;
+	float: right;
+	width: 153px;
+	} 
+
+/**
+* Subsidiary
+************************************************/
+#subsidiary .widget {
+	overflow: hidden;
+	margin: 0;
+	padding: 15px 20px 0 20px;
+	background: transparent;
+	border: none;
+	}
+#subsidiary .widget-title {
+	margin: 0 0 3px 0;
+	padding: 0 0 3px 0;
+	font-size: 15px;
+	background: transparent;
+	border-bottom: 1px solid #072145;
+	}
+
+#subsidiary .widget ul {
+	margin-left: 0;
+	}
+#subsidiary .widget ul li {
+	margin: 0 0 3px 0;
+	padding: 0 5px 3px 5px;
+	background: transparent;
+	}
+	
+
+	
+/* END FLUID 960 CSS */
+/* Extend block and header to have rounded corners */
+/**
+* Rounded Top and bottom corners
+**************************************/
+.hentry,#quickaccess.block,#sidebar-after-singular,#comments-template,
+.entry-utility,.series,.comments,.breadcrumbs,.loop-meta,#ygma
+{
+	border-right: 1px solid #ccc; 
+    border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc; 
+	border-bottom: 1px solid #ccc;
+	padding:1em; 
+	background: #fff url(images/box-bg.gif) repeat-x top left;
+	margin-bottom: 18px;
+	}
+#content p.byline,#content p.entry-meta,.comment-text,.comment-meta {
+	border-right: 1px solid #ccc; 
+    border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc; 
+	border-bottom: 1px solid #ccc;
+	padding:1em; 
+	}
+#content p.byline{text-align:left}
+#content p.entry-meta {
+margin-top: 18px;
+margin-bottom:10px;
+}
+.navigation-links{
+padding:3px;border-bottom:1px solid #6b90da;background-color:#ebeff9
+}	
+.rounded .hentry {
+background: #fff url(images/box-bg.gif) repeat-x top left;margin-bottom: 18px
+}
+/*
+* top rounded
+*/
+#menu-primary a,#menu-posttypes a,.yui-navset ul .yui-nav li a,.byline,#footer,
+.loop-meta,.page-numbers,.nav-prev a,.nav-next a,.breadcrumbs,
+.topcornered,.news-byline,.comment-meta,#footer-container{
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+}
+
+/*
+* bottom rounded
+*/
+#bd,#subsidiary,.hentry,.widget,.comment-text,#comments-template,.entry-meta,.navigation-links,#ft,
+.page-numbers,.loop-navigation,.utility,.entry-utility,.series,
+#menu-secondary a,#menu-subsidiary a,.share-meta {
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.indent {margin:3px 3px 3px 15px;}
+.doc_sep {  clear:both; padding: 5px 0 0 0;  margin: 0;border-bottom: 1px dotted #cccccc;}
+.sep { clear:both; border-bottom: 1px dotted #687082; font-size:10%;  margin: 5px 10px;}
+.sep1 { clear:both;  border-bottom: 1px dotted #AEAEAE; font-size:10%;}
+.sep2 {clear:both; border-bottom: 1px dotted #AEAEAE; font-size:50%;  margin-bottom: 5px;}
+.vsep {border-left: 1px solid #CCCCCC; height: 1px; margin-left: 5px; padding-left: 5px;}
+/* Categories */
+.yui-cms-categories a:hover{color:#c00;}
+.yui-cms-categories a:link,
+.yui-cms-categories a:visited {text-decoration: none;color:green;border-bottom:1px solid #ccc;}
+span.cms-dynamic{font-size:80%;}
+.path {margin-bottom:5px;}
+.note {clear:both;text-align:left;font-size:90%;color:red;padding:5px;}
+.redmessage {clear:both;text-align:center;font-size:90%;color:red;padding:5px;}
+.red a:link{color: #FF0000; }
+.note {padding: 5px;clear: both;text-align: left;font-size: 90%;color: #ff0000;}
+.redmessage {padding: 5px;clear: both;text-align: center;font-size: 90%;color: #ff0000;}
+.gray {background-color: #dfdfdf;}
+.centerblock {padding: 10px;clear: both;font-size: 90%; text-align:center;}
+.centerblock table {margin-left: auto;margin-right: auto;text-align: left;}
+.segment {
+clear:both;
+border-bottom: 1px solid #CCCCCC;
+background: #F0F0F0;
+}
+.segment a:link, .segment a:visited {
+color: #000000;
+}
+.segment a:hover {
+color: #1E76C8;
+}
+  /* Lists */
+ul.listing {
+    padding: 0 10px 10px 10px;
+}
+ ul.listing li {
+        list-style: disc;
+        margin: 5px;
+}
+		
+
+/* Widgets Common Styling */
+.image-stream .widget-inside div, .widget-newsletter .newsletter-wrap, #primary .search-form, #secondary .search-form , p.term-cloud, .textwidget, #primary .yui-navset, #secondary .yui-navset {
+	background: url(images/widget-list-item.png) repeat-x;
+	}	
+	
+.backtotop{background:url(images/go-up.png) no-repeat;height:48px;width:48px}
+	

@@ -1,0 +1,96 @@
+<script src="http://www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+<script language="Javascript" type="text/javascript">
+//<![CDATA[
+google.load("search", "1");
+
+$(document).ready(function() {
+	$("#search").blur(function () {
+		if($(this).val() == ""){
+			$(this).val("Search...");
+			$("#resultbox").css("display", "none"); 
+		}
+	});
+	
+	$("#search").focus(function () {
+		if ($(this).val() == "Search...") {
+			$(this).val("");
+		}
+	});
+	
+	$("#search").keyup(function () {
+		$("#resultbox").css("display", ""); 
+		$("#footer").css("display", "none");
+		$(".siteheader").html('<img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/loading.gif" width="16" height="16" style="margin-right:8px; vertical-align:-15%;" />Loading Results from Site...');
+		$(".googleheader").html('<img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/loading.gif" width="16" height="16" style="margin-right:8px; vertical-align:-15%;" />Loading Results from Google...');
+		
+		/* === Site Search === */
+		$.ajax({ 
+			method: "get",
+			url: "<?php bloginfo( 'home' ); ?>/feed/",
+			success: function(html){  
+				$(".siteheader").html('Results from papuapost.com:');
+				$("#sitesearch").html(html); 
+			}
+		});
+		
+		/* === Google Search === */
+		var sc = new GSearchControl();
+	    
+		sc.addSearcher(new GnewsSearch());
+		sc.addSearcher(new GblogSearch());		
+		sc.addSearcher(new GwebSearch());
+		sc.addSearcher(new GimageSearch());
+		sc.addSearcher(new GvideoSearch());
+		sc.addSearcher(new GbookSearch());
+		sc.addSearcher(new GlocalSearch());
+		sc.addSearcher(new GpatentSearch());
+
+		var drawOptions = new GdrawOptions();
+		drawOptions.setDrawMode(GSearchControl.DRAW_MODE_TABBED);
+		
+		var foo;
+		sc.setSearchCompleteCallback(foo, function(){
+			$(".googleheader").html('Results from Google:');
+		});
+		sc.setNoResultsString(GSearchControl.NO_RESULTS_DEFAULT_STRING);
+
+	    sc.draw(document.getElementById("googlesearch"), drawOptions);
+		sc.execute(document.getElementById("search").value);
+		/* === End Search === */
+		
+		if($(this).val() == ""){
+			$("#resultbox").slideUp(700, function(){
+				$("#footer").css("display", "");
+			});
+		}
+	});
+});
+//]]>
+</script>
+<div id="searchform searchformbox">
+<div id="quickaccess" class="yuimenubar yuimenubarnav" style="text-align:center;">&nbsp;&nbsp;&nbsp;Instant Google Search: Ketik Saja satu/beberapa kata, Google Akan tampilkan hasilnya secara Instan...</div>
+	<input class="buttons" type="text" title="Pilih Katakunci untuk Mencari berita secara kilat di Google dan hasil pencarian muncul langsung di bawahnya..." id="search" class="yui-tip" value="Search..." autocomplete="off" />
+	<div id="resultbox" style="display:none;">
+		<div class="siteheader"></div>
+		<div id="sitesearch"></div>
+		<div class="googleheader"></div>
+		<div id="googlesearch"></div>
+	</div>
+</div>
+<style>
+.googleheader, .siteheader {font-size:16px;font-weight:bold;font-style:italic;
+	margin:20px 0px;border-bottom:1px solid #ccc;}
+
+/* Google Style Hacks */
+.gsc-search-box, .gsc-configLabelCell {display:none;}
+.gsc-control {width:100%;}
+.gsc-tabHeader {padding:3px 8px 5px 8px;}
+.gsc-tabhActive {border-top:2px solid #666 !important;}
+.gsc-tabhInactive {}
+
+/* Link Colour */
+#resultbox a, .gs-title, .gs-title b {font-size:13px;font-weight:bold;
+	color:#2253AA !important;}
+.gs-visibleUrl, .gs-visibleUrl-short {color:#666 !important;}
+</style>
