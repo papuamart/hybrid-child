@@ -1,0 +1,91 @@
+/**
+ * Base stylesheet for use with the jQuery UI Tabs component.
+ *
+ * @since 0.9
+ * @package HybridCore
+ * @subpackage CSS
+ */
+
+/* Tabs wrap */
+.ui-tabs
+{
+	margin: 0;
+	padding: 2px 0 0;
+	width: 100%;
+	}
+.ui-tabs .ui-tabs-wrap {
+	background: url(../images/comments-bottom.png) no-repeat 0 bottom;
+	}
+
+	
+/* Tabs nav */
+.ui-tabs-nav {
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	padding-left: 10px;
+	}
+.ui-tabs-nav a{	
+-webkit-border-top-right-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-left:15px;padding-right:15px;
+	}
+.ui-tabs-nav li {
+	float: left;
+	margin: 1px 0 0 0;
+	list-style:none;
+	font-size:12px;
+	padding: 0;
+	}
+.ui-tabs-nav li a {
+	float: left;
+	padding: 10px 12px 10px 12px;
+	margin:auto 2px auto 2px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	background: #fff url(,,.images/box-bg.gif) repeat-x top left;
+	}
+.ui-tabs-nav li a:hover {
+	color: #000;
+	background: #F7F7F7;
+}
+ 
+.ui-tabs-nav li.ui-tabs-selected a {
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	font-weight:700;
+ 	background: #EEE;
+	}
+	
+/* Tabs panel */
+.ui-tabs-hide {
+	display: none;
+	}
+.ui-tabs .ui-tabs-panel {
+	clear: left;
+	overflow: hidden;
+	 	color:#c00;
+	background-color:#f7f7f7;
+	}
+
+/* Lists in the tabs after singular posts. */
+.ui-tabs .ui-tabs-panel ul.alignleft, .ui-tabs .ui-tabs-panel ul.alignright {
+	width: 100%;
+	margin: 0;
+	padding: 15px 20px 18px;
+	list-style: none;
+	border-right: 1px dotted #e5e5e5;
+	}
+.ui-tabs-panel li a {
+	border-bottom: 1px dotted #e5e5e5;
+	text-decoration: none;
+	}
+.ui-tabs-panel li a:hover {
+	border-bottom: 1px dotted #c2c2c2;
+	}
